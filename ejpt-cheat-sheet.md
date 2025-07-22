@@ -1,5 +1,22 @@
 # 📔 eJPT Cheat Sheet
 
+## Crypto
+### steg 
+steghide extract -sf cover.jpg
+steghide info cover.jpg
+stegcracker cover.jpg /usr/share/wordlists/rockyou.txt 	#bruteforce passwords from file
+zsteg -a image.png 				       	# for PNGs
+binwalk -e image.jpg				       	#extract hidden ffiles
+strings image.jpg
+outguess -d secret.txt -p password cover.jpg out.jpg 	# hide data
+outguess -r out.jpg extracted.txt			#extract data
+python stegoVeritas.py -i image.jpg			#analyze stego techniques
+
+###crypto
+echo "aGVsbG8=" | base64 -d				#base64 decode
+echo "68656c6c6f" | xxd -r -p 				# hex to asscii
+
+
 ## Networking
 
 #### Routing
@@ -305,9 +322,9 @@ smb: \> get file_shared.txt
 gzip -d /usr/share/wordlists/rockyou.txt.gz
 
 hydra -l admin -P /usr/share/wordlists/rockyou.txt <TARGET_IP> smb
+hydra -l <user> -P /usr/share/wordlists/rockyou.txt <targetIP> <service>
 ```
 
-We can use a wordlist generator tools (how [Cewl](http://127.0.0.1:5000/s/iS3hadq7jVFgSa8k5wRA/pratical-ethical-hacker-notes/cewl)), to create custom wordlists.
 
 #### Metasploit
 
