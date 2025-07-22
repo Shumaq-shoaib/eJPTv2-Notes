@@ -2,7 +2,8 @@
 
 ## Crypto
 ### steg 
-'''bash
+``` bash
+
 steghide extract -sf cover.jpg
 
 steghide info cover.jpg
@@ -20,14 +21,15 @@ outguess -d secret.txt -p password cover.jpg out.jpg 	# hide data
 outguess -r out.jpg extracted.txt			#extract data
 
 python stegoVeritas.py -i image.jpg			#analyze stego techniques
-'''
+```
 ###crypto
-'''bash
+```bash
+
 echo "aGVsbG8=" | base64 -d				#base64 decode
 
 echo "68656c6c6f" | xxd -r -p 				# hex to asscii
 
-'''
+```
 
 ## Networking
 
