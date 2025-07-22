@@ -2,20 +2,32 @@
 
 ## Crypto
 ### steg 
+'''bash
 steghide extract -sf cover.jpg
-steghide info cover.jpg
-stegcracker cover.jpg /usr/share/wordlists/rockyou.txt 	#bruteforce passwords from file
-zsteg -a image.png 				       	# for PNGs
-binwalk -e image.jpg				       	#extract hidden ffiles
-strings image.jpg
-outguess -d secret.txt -p password cover.jpg out.jpg 	# hide data
-outguess -r out.jpg extracted.txt			#extract data
-python stegoVeritas.py -i image.jpg			#analyze stego techniques
 
+steghide info cover.jpg
+
+stegcracker cover.jpg /usr/share/wordlists/rockyou.txt 	#bruteforce passwords from file
+
+zsteg -a image.png 				       	# for PNGs
+
+binwalk -e image.jpg				       	#extract hidden ffiles
+
+strings image.jpg
+
+outguess -d secret.txt -p password cover.jpg out.jpg 	# hide data
+
+outguess -r out.jpg extracted.txt			#extract data
+
+python stegoVeritas.py -i image.jpg			#analyze stego techniques
+'''
 ###crypto
+'''bash
 echo "aGVsbG8=" | base64 -d				#base64 decode
+
 echo "68656c6c6f" | xxd -r -p 				# hex to asscii
 
+'''
 
 ## Networking
 
