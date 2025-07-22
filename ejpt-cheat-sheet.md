@@ -22,7 +22,7 @@ outguess -r out.jpg extracted.txt			#extract data
 
 python stegoVeritas.py -i image.jpg			#analyze stego techniques
 ```
-###crypto
+### crypto
 ```bash
 
 echo "aGVsbG8=" | base64 -d				#base64 decode
