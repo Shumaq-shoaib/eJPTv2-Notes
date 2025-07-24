@@ -2976,6 +2976,8 @@ curl -X OPTIONS <TARGET_IP> -v
 curl -X POST <TARGET_IP>
 curl -X POST <TARGET_IP>/login.php -d "name=john&password=password" -v
 curl -X PUT <TARGET_IP>
+curl -L <target_IP> 		#follow redirection
+
 
 curl <TARGET_IP>/uploads/ --upload-file hello.txt
 curl -X DELETE <TARGET_IP>/uploads/hello.txt -v
