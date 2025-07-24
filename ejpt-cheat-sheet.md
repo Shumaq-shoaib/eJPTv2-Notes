@@ -824,7 +824,11 @@ use exploit/windows/winrm/winrm_script_exec
 set USERNAME <USER>
 set PASSWORD <PW>
 set FORCE_VBS true
+
+run post/multi/recon/local_exploit_suggester
 ```
+
+
 
 ### Windows Privilege Escalation
 
