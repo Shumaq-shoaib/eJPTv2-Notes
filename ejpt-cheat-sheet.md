@@ -159,6 +159,9 @@ sudo nmap -sn <TARGET_IP/NETWORK>
 ## ARP scan
 netdiscover -i eth1 -r <TARGET_IP/NETWORK>
 
+#All ports scan
+rustscan -a <target_IP> -r 1-65535
+
 # NMAP PORT SCAN
 nmap <TARGET_IP>
 ## Skip ping
