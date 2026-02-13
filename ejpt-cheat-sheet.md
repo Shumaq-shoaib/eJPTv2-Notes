@@ -304,7 +304,12 @@ rpcclient -U "" -N <TARGET_IP>
 ## RPCCLIENT
 enumdomusers
 enumdomgroups
+netshareenumall
+netsharegetinfo notes
+queryuser
+querygroup
 lookupnames admin
+for i in $(seq 500 1100);do rpcclient -N -U "" 10.129.14.128 -c "queryuser 0x$(printf '%x\n' $i)" | grep "User Name\|user_rid\|group_rid" && echo "";done
 ```
 
 #### Enum4Linux
@@ -1068,12 +1073,14 @@ hydra -L /usr/share/metasploit-framework/data/wordlists/common_users.txt -P /usr
 
 ```bash
 # SAMBA
+
 smbmap -u <USER> -p '<PW>' -H <TARGET_IP>
 
 smbclient -L <TARGET_IP> -U <USER>
-
+smbmap -H 10.129.14.128
 enum4linux -a <TARGET_IP>
 enum4linux -a -u "<USER>" -p "<PW>" <TARGET_IP>
+crackmapexec smb 10.129.14.128 --shares -u '' -p ''
 ```
 
 ```bash
